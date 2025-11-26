@@ -1,0 +1,4 @@
+package com.alura.challenge.conversor.logica;
+
+public record DatosMonedas(String usd, String cop, String ars, String brl, String bob,String clp) {
+}
