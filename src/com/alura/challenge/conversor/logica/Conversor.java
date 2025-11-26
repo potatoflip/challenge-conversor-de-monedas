@@ -3,12 +3,15 @@ package com.alura.challenge.conversor.logica;
 public class Conversor {
     private int monedaConvertida;
 
-    public int Conversor(int moneda){
-        return moneda*this.monedaConvertida;
+    private int resultadoConversion;
 
+    public int Conversor(int moneda){
+        this.resultadoConversion = moneda*this.monedaConvertida;
+        return this.resultadoConversion;
     }
 
     public int getMonedaConvertida() {
+
         return monedaConvertida;
     }
 
