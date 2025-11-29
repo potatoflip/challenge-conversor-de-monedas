@@ -15,6 +15,7 @@ Manejar errores con try/catch para evitar que el programa termine abruptamente.
 Aprender a controlar la interacción con el usuario mediante bucles y validaciones.
 
 Estructura del proyecto
+***
 1. ApiConversor
 
 Clase encargada de:
@@ -24,7 +25,7 @@ Construir la URL según la moneda elegida.
 Hacer la solicitud HTTP.
 
 Guardar el JSON recibido.
-
+***
 2. BaseJson / DatosMonedas
 
 BaseJson representa el JSON completo.
@@ -32,7 +33,7 @@ BaseJson representa el JSON completo.
 DatosMonedas contiene solo las monedas usadas.
 
 Se utilizan record para mapear los valores.
-
+***
 3. Conversor
 
 Clase que:
@@ -42,7 +43,7 @@ Recibe las tasas.
 Calcula el valor convertido según la moneda elegida.
 
 4. Principal
-
+***
 Muestra el menú.
 
 Pide opciones al usuario.
