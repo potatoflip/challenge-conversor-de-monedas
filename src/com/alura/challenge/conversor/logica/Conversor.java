@@ -8,23 +8,23 @@ public class Conversor {
         this.valorAConvertir = valorAConvertir;
     }
 
-    public double resultados(BaseJson tasas, String tecladoMoneda){
+    public double resultados(BaseJson tasas, int tecladoMoneda){
         double valorDeConversion = Conversor(tasas, tecladoMoneda);
         double resultado = this.valorAConvertir * valorDeConversion;
         return resultado;
 
     }
 
-    public double Conversor(BaseJson datos, String teclado){
+    public double Conversor(BaseJson datos, int teclado){
         var tasa = datos.conversion_rates();
 
         return switch (teclado){
-            case "USD" -> tasa.usd();
-            case "BOB" -> tasa.bob();
-            case "ARS" -> tasa.ars();
-            case "CLP" -> tasa.clp();
-            case "COP" -> tasa.cop();
-            case "BRL" -> tasa.brl();
+            case 1 -> tasa.usd();
+            case 6 -> tasa.bob();
+            case 2 -> tasa.ars();
+            case 3 -> tasa.clp();
+            case 4 -> tasa.cop();
+            case 5 -> tasa.brl();
 
             default -> 0;
         };

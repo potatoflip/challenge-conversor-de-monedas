@@ -12,23 +12,32 @@ public class ApiConversor {
 
     private String json;
 
-    private String monedaSeleccionada;
+    private int monedaSeleccionada;
 
-    public String getMoneda() {
-        return monedaSeleccionada;
+    public void setMonedaSeleccionada(int monedaSeleccionada) {
+        this.monedaSeleccionada = monedaSeleccionada;
     }
 
-    public void setMoneda(String moneda) {
-        this.monedaSeleccionada = moneda;
+    public String setMoneda(int moneda) {
+
+        return switch (moneda){
+            case 1 -> "USD";
+            case 6 -> "BOB";
+            case 2 -> "ARS";
+            case 3 -> "CLP";
+            case 4 -> "COP";
+            case 5 -> "BRL";
+
+            default -> "";
+        };
     }
 
     public void apiConversor() throws IOException, InterruptedException {
         HttpClient client = HttpClient.newHttpClient();
     HttpRequest request = HttpRequest.newBuilder()
-            .uri(URI.create("https://v6.exchangerate-api.com/v6/362f96062ac817d584c15f36/latest/"+this.monedaSeleccionada))
+            .uri(URI.create("https://v6.exchangerate-api.com/v6/362f96062ac817d584c15f36/latest/"+ setMoneda(this.monedaSeleccionada)))
             .build();
 
-    //Agregar catch luego
     HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
     this.json = response.body();
     }
