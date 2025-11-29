@@ -41,9 +41,9 @@ Clase que:
 Recibe las tasas.
 
 Calcula el valor convertido según la moneda elegida.
-
-4. Principal
 ***
+4. Principal
+
 Muestra el menú.
 
 Pide opciones al usuario.
